@@ -29,24 +29,27 @@ native_mfmaduar = charts.Subject(
 
 # and then...
 
-print('2000-1-1 Morning')
-natal = charts.Natal(native)
-for object in natal.objects.values():
-    print(object)
 for i in range(4): print()
 
 print('M. F. Máduar')
-natal_mfmaduar = charts.Natal(native_mfmaduar)
-for object in natal_mfmaduar.objects.values():
-    print(object)
+# natal_mfmaduar = charts.Natal(native_mfmaduar)
+# for object in natal_mfmaduar.objects.values():
+#     print(object)
 
 from immanuel.const import chart
 from immanuel.setup import settings
 
 settings.objects.append(chart.CERES)
-natal_mfmaduar = charts.Natal(native_mfmaduar)
+# natal_mfmaduar = charts.Natal(native_mfmaduar)
 
-for object in natal_mfmaduar.objects.values():
+# for object in natal_mfmaduar.objects.values():
+#     print(object)
+
+print('===================================')
+print('Transits:')
+print('===================================')
+transits = charts.Transits('23s33', '46w38')
+for object in transits.objects.values():
     print(object)
 
 import json
@@ -54,4 +57,5 @@ import json
 from immanuel.classes.serialize import ToJSON
 from immanuel import charts
 
-print(json.dumps(natal.objects, cls=ToJSON, indent=4))
+# print(json.dumps(natal_mfmaduar.objects, cls=ToJSON, indent=4))
+print(json.dumps(transits.objects, cls=ToJSON, indent=4))
