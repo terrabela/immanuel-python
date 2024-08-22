@@ -1,6 +1,7 @@
 __pycache__/
 .venv*/
 .pytest_cache/
+.spyproject/
 dist/
 .DS_Store
 *.egg-info
